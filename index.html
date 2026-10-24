@@ -1,352 +1,295 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حاسبة القروض والتمويل الشاملة</title>
+<meta name="description" content="احسبي القسط الشهري وإجمالي الفوائد وتكلفة القروض والتمويل الشخصي والعقاري وتمويل السيارات مجانًا.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://laylaalshoalan-commits.github.io/loan-calculator/">
+<meta name="theme-color" content="#0f766e">
 
-  <title>حاسبة القروض والتمويل الشاملة | احسبي القسط الشهري</title>
-  <meta name="description" content="احسبي القسط الشهري للقروض والتمويل الشخصي أو العقاري أو السيارات بسهولة. تعرفي على إجمالي الفوائد وتكلفة التمويل وجدول الأقساط باستخدام حاسبة مجانية.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#0f766e">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RPDKR5Q6W8"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RPDKR5Q6W8');
+</script>
 
-  <link rel="canonical" href="https://laylaalshoalan-commits.github.io/loan-calculator/">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f1f5f9;color:#172b3a;line-height:1.9}
+header{background:#0f766e;color:white;padding:22px 15px;text-align:center}
+header h1{font-size:27px;margin:0}
+header p{margin:5px 0 0}
+.container{width:min(1050px,92%);margin:25px auto}
+.intro{text-align:center;margin-bottom:25px}
+.intro h2{color:#115e59}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.card{background:white;padding:23px;border-radius:16px;box-shadow:0 5px 20px #0f172a0d;margin-bottom:20px}
+.card h2{font-size:21px;margin-top:0}
+label{display:block;font-weight:bold;font-size:14px;margin:12px 0 5px}
+input,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;background:white}
+input:focus,select:focus{outline:2px solid #99f6e4;border-color:#0f766e}
+button{width:100%;padding:13px;border:0;border-radius:9px;background:#0f766e;color:white;font:inherit;font-weight:bold;cursor:pointer;margin-top:15px}
+button:hover{background:#115e59}
+.secondary{background:#e2e8f0;color:#172b3a}
+.result{background:linear-gradient(135deg,#115e59,#0f766e);color:white;padding:23px;border-radius:15px}
+.result h2{margin-top:0}
+.big{font-size:32px;font-weight:bold;overflow-wrap:anywhere}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{padding:12px;background:#ffffff20;border-radius:10px;overflow-wrap:anywhere}
+.stat strong{display:block;font-size:18px}
+.stat span{font-size:13px}
+.message{margin-top:12px;padding:10px;border-radius:8px;background:#fef2f2;color:#991b1b}
+.hidden{display:none}
+.note{font-size:13px;color:#64748b}
+.info{background:#ecfdf5;padding:15px;border-radius:10px;margin-top:18px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:13px}
+th,td{padding:9px;border-bottom:1px solid #e2e8f0;text-align:center}
+th{background:#f0fdfa}
+section{margin-top:25px}
+footer{text-align:center;background:#e2e8f0;padding:20px;margin-top:35px;font-size:13px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.card{padding:17px}header h1{font-size:23px}.big{font-size:28px}}
+</style>
+</head>
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="حاسبة القروض والتمويل الشاملة">
-  <meta property="og:description" content="احسبي القسط الشهري وإجمالي الفوائد وتكلفة التمويل بسهولة مجانًا.">
-  <meta property="og:url" content="https://laylaalshoalan-commits.github.io/loan-calculator/">
-  <meta property="og:locale" content="ar_AR">
+<body>
+<header>
+<h1>حاسبة القروض والتمويل</h1>
+<p>احسبي قسطك الشهري واعرفي تكلفة التمويل قبل اتخاذ القرار</p>
+</header>
 
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<main class="container">
+<div class="intro">
+<h2>حاسبة القروض المجانية</h2>
+<p>أدخلي مبلغ التمويل ونسبة الفائدة والمدة للحصول على تقدير فوري للأقساط.</p>
+</div>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPDKR5Q6W8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RPDKR5Q6W8');
-  </script>
+<div class="grid">
+<div class="card">
+<h2>🧮 بيانات التمويل</h2>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "حاسبة القروض والتمويل الشاملة",
-    "url": "https://laylaalshoalan-commits.github.io/loan-calculator/",
-    "description": "حاسبة مجانية لتقدير الأقساط الشهرية وإجمالي الفوائد وتكلفة القروض والتمويل.",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "inLanguage": "ar",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
+<label for="loanType">نوع التمويل</label>
+<select id="loanType">
+<option>تمويل شخصي</option>
+<option>تمويل عقاري</option>
+<option>تمويل سيارة</option>
+<option>تمويل آخر</option>
+</select>
 
-  <style>
-    :root {
-      --primary: #0f766e;
-      --primary-dark: #115e59;
-      --light: #f0fdfa;
-      --background: #f4f7fb;
-      --text: #172b3a;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --white: #ffffff;
-      --green: #15803d;
-      --red: #b91c1c;
-      --shadow: 0 8px 28px rgba(15, 23, 42, .07);
-    }
+<label for="amount">مبلغ القرض</label>
+<input id="amount" type="number" min="1" step="any" value="100000" inputmode="decimal">
 
-    * {
-      box-sizing: border-box;
-    }
+<label for="currency">العملة</label>
+<select id="currency">
+<option value="USD">دولار أمريكي (USD)</option>
+<option value="SAR">ريال سعودي (SAR)</option>
+<option value="YER">ريال يمني (YER)</option>
+<option value="SDG">جنيه سوداني (SDG)</option>
+<option value="AED">درهم إماراتي (AED)</option>
+<option value="EGP">جنيه مصري (EGP)</option>
+</select>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<label for="rate">نسبة الفائدة السنوية (%)</label>
+<input id="rate" type="number" min="0" max="100" step="any" value="5" inputmode="decimal">
 
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Tahoma, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.9;
-    }
+<label for="years">مدة القرض (سنوات)</label>
+<select id="years">
+<option value="1">سنة واحدة</option>
+<option value="2">سنتان</option>
+<option value="3">3 سنوات</option>
+<option value="4">4 سنوات</option>
+<option value="5" selected>5 سنوات</option>
+<option value="7">7 سنوات</option>
+<option value="10">10 سنوات</option>
+<option value="15">15 سنة</option>
+<option value="20">20 سنة</option>
+<option value="25">25 سنة</option>
+<option value="30">30 سنة</option>
+</select>
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
+<label for="extra">رسوم التمويل الإضافية (اختياري)</label>
+<input id="extra" type="number" min="0" step="any" value="0" inputmode="decimal">
 
-    a:hover {
-      text-decoration: underline;
-    }
+<button type="button" id="calculate">احسبي القسط الآن</button>
+<button type="button" class="secondary" id="reset">إعادة ضبط البيانات</button>
 
-    .container {
-      width: min(1100px, 92%);
-      margin: auto;
-    }
+<p class="note">الحساب تقديري ويفترض أقساطًا شهرية متساوية دون تغيير سعر الفائدة.</p>
+<div id="error" class="message hidden" role="alert"></div>
+</div>
 
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-    }
+<div>
+<div class="result" aria-live="polite">
+<h2>📊 نتائج التمويل</h2>
+<div>القسط الشهري التقديري</div>
+<div class="big" id="monthly">—</div>
+<div class="stats">
+<div class="stat"><span>إجمالي الفوائد</span><strong id="interest">—</strong></div>
+<div class="stat"><span>إجمالي السداد مع الرسوم</span><strong id="total">—</strong></div>
+<div class="stat"><span>أصل القرض</span><strong id="principal">—</strong></div>
+<div class="stat"><span>مدة التمويل</span><strong id="duration">—</strong></div>
+</div>
+</div>
 
-    .navbar {
-      min-height: 76px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      padding: 12px 0;
-    }
+<div class="card">
+<h2>📅 ملخص الأقساط</h2>
+<p id="summary">أدخلي البيانات ثم اضغطي على زر الحساب لعرض النتائج.</p>
+<button type="button" class="secondary" id="showSchedule">عرض جدول السداد</button>
+</div>
+</div>
+</div>
 
-    .brand {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--primary-dark);
-    }
+<section id="scheduleSection" class="card hidden">
+<h2>جدول السداد السنوي</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>السنة</th><th>الرصيد أول السنة</th><th>إجمالي الأقساط</th><th>الفوائد</th><th>سداد أصل القرض</th><th>الرصيد المتبقي</th></tr></thead>
+<tbody id="schedule"></tbody>
+</table>
+</div>
+</section>
 
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
+<section class="card">
+<h2>كيف تُحسب الأقساط؟</h2>
+<p>تستخدم الحاسبة معادلة الأقساط الشهرية الثابتة عند وجود فائدة سنوية ثابتة. وتتغير النتائج بحسب مبلغ التمويل ونسبة الفائدة ومدة السداد.</p>
+<h3>ما الفرق بين القسط والفائدة؟</h3>
+<p>القسط هو المبلغ المدفوع كل شهر، ويشمل جزءًا من أصل القرض وجزءًا من الفائدة. أما إجمالي الفوائد فهو تكلفة الفائدة طوال فترة السداد.</p>
+<div class="info">تنبيه: النتائج تقديرية ولا تشمل أي رسوم غير الرسوم التي تدخلينها. قد تختلف شروط البنوك والجهات التمويلية، وقد تُحسب بعض المنتجات وفق طريقة مختلفة.</div>
+</section>
+</main>
 
-    .hero {
-      padding: 48px 0 30px;
-      text-align: center;
-    }
+<footer>
+<p>حاسبة القروض والتمويل الشاملة</p>
+<p>أداة مجانية للتقدير والتخطيط المالي، وليست عرضًا تمويليًا أو نصيحة مالية.</p>
+</footer>
 
-    .badge {
-      display: inline-block;
-      background: #ccfbf1;
-      color: #115e59;
-      border-radius: 30px;
-      padding: 5px 14px;
-      font-size: 13px;
-      font-weight: bold;
-    }
+<script>
+(function(){
+"use strict";
 
-    h1 {
-      font-size: clamp(27px, 5vw, 42px);
-      line-height: 1.5;
-      margin: 15px 0 10px;
-    }
+const $ = id => document.getElementById(id);
+let lastData = null;
 
-    .hero p {
-      color: var(--muted);
-      max-width: 720px;
-      margin: auto;
-    }
+function format(value){
+const currency = $("currency").value;
+try{
+return new Intl.NumberFormat("ar",{style:"currency",currency:currency,maximumFractionDigits:2}).format(value);
+}catch(e){
+return value.toFixed(2)+" "+currency;
+}
+}
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
-      gap: 22px;
-      align-items: start;
-      padding-bottom: 35px;
-    }
+function calculate(){
+const amount = Number($("amount").value);
+const annualRate = Number($("rate").value);
+const years = Number($("years").value);
+const fees = Number($("extra").value);
 
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      margin-bottom: 22px;
-    }
+$("error").classList.add("hidden");
 
-    h2 {
-      font-size: 22px;
-      margin: 0 0 15px;
-      line-height: 1.6;
-    }
+if(!Number.isFinite(amount)||amount<=0){
+showError("يرجى إدخال مبلغ قرض أكبر من صفر.");
+return;
+}
+if(!Number.isFinite(annualRate)||annualRate<0||annualRate>100){
+showError("يرجى إدخال فائدة سنوية بين 0 و100%.");
+return;
+}
+if(!Number.isFinite(years)||years<=0){
+showError("يرجى اختيار مدة قرض صحيحة.");
+return;
+}
+if(!Number.isFinite(fees)||fees<0){
+showError("يرجى إدخال رسوم صحيحة أو تركها صفرًا.");
+return;
+}
 
-    h3 {
-      font-size: 18px;
-      margin: 22px 0 8px;
-    }
+const months = Math.round(years*12);
+const r = annualRate/100/12;
+const payment = r===0 ? amount/months : amount*r/(1-Math.pow(1+r,-months));
+const totalPayments = payment*months;
+const totalInterest = totalPayments-amount;
+const totalWithFees = totalPayments+fees;
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: -8px;
-      margin-bottom: 20px;
-    }
+if(!Number.isFinite(payment)){
+showError("تعذر حساب النتائج. يرجى مراجعة البيانات.");
+return;
+}
 
-    .field {
-      margin-bottom: 18px;
-    }
+$("monthly").textContent = format(payment);
+$("interest").textContent = format(totalInterest);
+$("total").textContent = format(totalWithFees);
+$("principal").textContent = format(amount);
+$("duration").textContent = months+" شهرًا";
+$("summary").textContent = "مدة التمويل "+years+" سنة، بإجمالي "+months+" قسطًا. الرسوم الإضافية المدخلة: "+format(fees)+".";
 
-    label {
-      display: block;
-      font-weight: bold;
-      font-size: 14px;
-      margin-bottom: 7px;
-    }
+lastData = {amount,annualRate,years,months,r,payment,fees};
+renderSchedule();
+}
 
-    input, select {
-      display: block;
-      width: 100%;
-      min-height: 48px;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      padding: 11px 13px;
-      background: white;
-      color: var(--text);
-      font: inherit;
-      outline: none;
-    }
+function showError(message){
+$("error").textContent = message;
+$("error").classList.remove("hidden");
+}
 
-    input:focus, select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(15, 118, 110, .12);
-    }
+function renderSchedule(){
+if(!lastData)return;
+const d = lastData;
+let balance = d.amount;
+let rows = "";
 
-    .hint {
-      color: var(--muted);
-      font-size: 12px;
-      display: block;
-      margin-top: 5px;
-    }
+for(let year=1;year<=d.years;year++){
+const start = balance;
+let yearlyInterest = 0;
+let yearlyPrincipal = 0;
+let yearlyPayments = 0;
 
-    .btn {
-      border: 0;
-      background: var(--primary);
-      color: white;
-      border-radius: 10px;
-      padding: 13px 20px;
-      min-height: 48px;
-      font: inherit;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      transition: background .2s;
-    }
+for(let m=0;m<12 && (year-1)*12+m<d.months;m++){
+const interest = balance*d.r;
+let principal = d.payment-interest;
+if(d.r===0) principal=d.payment;
+if(principal>balance)principal=balance;
+balance = Math.max(0,balance-principal);
+yearlyInterest += interest;
+yearlyPrincipal += principal;
+yearlyPayments += principal+interest;
+}
 
-    .btn:hover {
-      background: var(--primary-dark);
-    }
+rows += "<tr><td>"+year+"</td><td>"+format(start)+"</td><td>"+format(yearlyPayments)+"</td><td>"+format(yearlyInterest)+"</td><td>"+format(yearlyPrincipal)+"</td><td>"+format(balance)+"</td></tr>";
+}
+$("schedule").innerHTML = rows;
+}
 
-    .btn-secondary {
-      background: #e2e8f0;
-      color: #1e293b;
-    }
+$("calculate").addEventListener("click",calculate);
 
-    .btn-secondary:hover {
-      background: #cbd5e1;
-    }
+$("reset").addEventListener("click",function(){
+$("amount").value="100000";
+$("rate").value="5";
+$("years").value="5";
+$("extra").value="0";
+$("currency").value="USD";
+$("loanType").selectedIndex=0;
+$("scheduleSection").classList.add("hidden");
+calculate();
+});
 
-    .button-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
+$("showSchedule").addEventListener("click",function(){
+if(!lastData)calculate();
+if(lastData){
+$("scheduleSection").classList.toggle("hidden");
+$("scheduleSection").scrollIntoView({behavior:"smooth",block:"start"});
+}
+});
 
-    .error {
-      color: var(--red);
-      background: #fef2f2;
-      padding: 10px 12px;
-      border-radius: 9px;
-      margin-top: 12px;
-      font-size: 14px;
-    }
+["amount","rate","years","extra","currency"].forEach(id=>{
+$(id).addEventListener("change",calculate);
+});
 
-    .hidden {
-      display: none !important;
-    }
-
-    .result-card {
-      background: linear-gradient(140deg, #115e59, #0f766e);
-      color: white;
-      border-radius: 18px;
-      padding: 25px;
-      margin-bottom: 18px;
-    }
-
-    .result-card .label {
-      font-size: 14px;
-      opacity: .9;
-    }
-
-    .main-number {
-      font-size: clamp(28px, 5vw, 38px);
-      font-weight: 800;
-      margin: 5px 0 16px;
-      overflow-wrap: anywhere;
-    }
-
-    .result-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .result-item {
-      background: rgba(255,255,255,.13);
-      border-radius: 12px;
-      padding: 12px;
-    }
-
-    .result-item strong {
-      display: block;
-      font-size: 18px;
-      overflow-wrap: anywhere;
-    }
-
-    .result-item span {
-      font-size: 12px;
-      opacity: .9;
-    }
-
-    .notice {
-      border-right: 4px solid #f59e0b;
-      background: #fffbeb;
-      color: #78350f;
-      padding: 13px 15px;
-      border-radius: 8px;
-      font-size: 13px;
-      margin-top: 16px;
-    }
-
-    .section {
-      margin: 20px 0;
-    }
-
-    .section p {
-      color: #475569;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-bottom: 28px;
-    }
-
-    .feature {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-    }
-
-    .feature .icon {
-      font-size: 27px;
-    }
-
-    .feature h3 {
-      margin: 8px 0 5px;
-    }
-
-    .feature p {
-      font-size: 14px;
-      color: var(--muted
+calculate();
+})();
+</script>
+</body>
+</html>
