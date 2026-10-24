@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://laylaalshoalan-commits.github.io/loan-calculator/sitemap.xml
