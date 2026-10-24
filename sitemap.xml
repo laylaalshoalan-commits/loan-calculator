@@ -1,13 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  <url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
     <loc>https://laylaalshoalan-commits.github.io/loan-calculator/</loc>
-  </url>  <url>
+  </url>
+
+  <url>
     <loc>https://laylaalshoalan-commits.github.io/loan-calculator/about.html</loc>
-  </url>  <url>
+  </url>
+
+  <url>
+    <loc>https://laylaalshoalan-commits.github.io/loan-calculator/guides.html</loc>
+  </url>
+
+  <url>
     <loc>https://laylaalshoalan-commits.github.io/loan-calculator/privacy.html</loc>
-  </url>  <url>
+  </url>
+
+  <url>
     <loc>https://laylaalshoalan-commits.github.io/loan-calculator/terms.html</loc>
-  </url>  <url>
+  </url>
+
+  <url>
     <loc>https://laylaalshoalan-commits.github.io/loan-calculator/disclaimer.html</loc>
-  </url>  <url>
+  </url>
+
+  <url>
     <loc>https://laylaalshoalan-commits.github.io/loan-calculator/contact.html</loc>
-  </url></urlset>
+  </url>
+
+</urlset>
