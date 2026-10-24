@@ -3,293 +3,874 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>حاسبة القروض والتمويل الشاملة</title>
-<meta name="description" content="احسبي القسط الشهري وإجمالي الفوائد وتكلفة القروض والتمويل الشخصي والعقاري وتمويل السيارات مجانًا.">
+
+<title>حاسبة القروض والتمويل | حساب القسط الشهري والفوائد</title>
+
+<meta name="description" content="احسبي القسط الشهري للقروض والتمويل الشخصي والعقاري وتمويل السيارات. تعرفي على إجمالي الفوائد وتكلفة التمويل وجدول السداد باستخدام حاسبة مجانية باللغة العربية.">
+
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://laylaalshoalan-commits.github.io/loan-calculator/">
 <meta name="theme-color" content="#0f766e">
 
+<link rel="canonical" href="https://laylaalshoalan-commits.github.io/loan-calculator/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="حاسبة القروض والتمويل">
+<meta property="og:description" content="احسبي القسط الشهري وإجمالي الفوائد وتكلفة التمويل باستخدام حاسبة مجانية.">
+<meta property="og:url" content="https://laylaalshoalan-commits.github.io/loan-calculator/">
+<meta property="og:locale" content="ar_AR">
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPDKR5Q6W8"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+
+function gtag() {
+    dataLayer.push(arguments);
+}
+
 gtag('js', new Date());
 gtag('config', 'G-RPDKR5Q6W8');
 </script>
 
+<!-- Structured Data: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "حاسبة القروض والتمويل",
+  "url": "https://laylaalshoalan-commits.github.io/loan-calculator/",
+  "description": "حاسبة عربية مجانية لتقدير القسط الشهري وإجمالي الفوائد وتكلفة القروض والتمويل الشخصي والعقاري وتمويل السيارات.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "ar",
+  "browserRequirements": "Requires JavaScript and a modern web browser",
+  "isAccessibleForFree": true
+}
+</script>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f1f5f9;color:#172b3a;line-height:1.9}
-header{background:#0f766e;color:white;padding:22px 15px;text-align:center}
-header h1{font-size:27px;margin:0}
-header p{margin:5px 0 0}
-.container{width:min(1050px,92%);margin:25px auto}
-.intro{text-align:center;margin-bottom:25px}
-.intro h2{color:#115e59}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
-.card{background:white;padding:23px;border-radius:16px;box-shadow:0 5px 20px #0f172a0d;margin-bottom:20px}
-.card h2{font-size:21px;margin-top:0}
-label{display:block;font-weight:bold;font-size:14px;margin:12px 0 5px}
-input,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;background:white}
-input:focus,select:focus{outline:2px solid #99f6e4;border-color:#0f766e}
-button{width:100%;padding:13px;border:0;border-radius:9px;background:#0f766e;color:white;font:inherit;font-weight:bold;cursor:pointer;margin-top:15px}
-button:hover{background:#115e59}
-.secondary{background:#e2e8f0;color:#172b3a}
-.result{background:linear-gradient(135deg,#115e59,#0f766e);color:white;padding:23px;border-radius:15px}
-.result h2{margin-top:0}
-.big{font-size:32px;font-weight:bold;overflow-wrap:anywhere}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.stat{padding:12px;background:#ffffff20;border-radius:10px;overflow-wrap:anywhere}
-.stat strong{display:block;font-size:18px}
-.stat span{font-size:13px}
-.message{margin-top:12px;padding:10px;border-radius:8px;background:#fef2f2;color:#991b1b}
-.hidden{display:none}
-.note{font-size:13px;color:#64748b}
-.info{background:#ecfdf5;padding:15px;border-radius:10px;margin-top:18px}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:13px}
-th,td{padding:9px;border-bottom:1px solid #e2e8f0;text-align:center}
-th{background:#f0fdfa}
-section{margin-top:25px}
-footer{text-align:center;background:#e2e8f0;padding:20px;margin-top:35px;font-size:13px}
-@media(max-width:700px){.grid{grid-template-columns:1fr}.card{padding:17px}header h1{font-size:23px}.big{font-size:28px}}
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #f1f5f9;
+    color: #172b3a;
+    line-height: 1.9;
+}
+
+a {
+    color: #0f766e;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+header {
+    background: #0f766e;
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    padding: 14px;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: min(1050px, 92%);
+    margin: 25px auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.intro h2 {
+    color: #115e59;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.card {
+    background: white;
+    padding: 23px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px #0f172a0d;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 21px;
+    margin-top: 0;
+    color: #115e59;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 12px 0 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font: inherit;
+    background: white;
+    color: #172b3a;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    border-radius: 9px;
+    background: #0f766e;
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #115e59;
+}
+
+.secondary {
+    background: #e2e8f0;
+    color: #172b3a;
+}
+
+.secondary:hover {
+    background: #cbd5e1;
+}
+
+.result {
+    background: linear-gradient(135deg, #115e59, #0f766e);
+    color: white;
+    padding: 23px;
+    border-radius: 15px;
+}
+
+.result h2 {
+    color: white;
+    margin-top: 0;
+}
+
+.big {
+    font-size: 30px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.stat {
+    padding: 12px;
+    background: #ffffff20;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.stat strong {
+    display: block;
+    font-size: 18px;
+}
+
+.stat span {
+    font-size: 13px;
+}
+
+.message {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.note {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.info {
+    background: #ecfdf5;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 18px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+th,
+td {
+    padding: 9px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+th {
+    background: #f0fdfa;
+}
+
+section {
+    margin-top: 25px;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+}
+
+.content-section h3 {
+    color: #115e59;
+    margin-top: 22px;
+}
+
+footer {
+    text-align: center;
+    background: #e2e8f0;
+    padding: 25px 15px;
+    margin-top: 35px;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 18px;
+    margin-top: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 17px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .big {
+        font-size: 25px;
+    }
+}
 </style>
 </head>
 
 <body>
+
 <header>
-<h1>حاسبة القروض والتمويل</h1>
-<p>احسبي قسطك الشهري واعرفي تكلفة التمويل قبل اتخاذ القرار</p>
+    <h1>حاسبة القروض والتمويل</h1>
+    <p>احسبي القسط الشهري واعرفي تكلفة التمويل قبل اتخاذ القرار</p>
 </header>
 
+<nav aria-label="التنقل الرئيسي">
+    <a href="#calculator">الحاسبة</a>
+    <a href="#how-it-works">طريقة الحساب</a>
+    <a href="#financial-tips">النصائح المالية</a>
+    <a href="./about.html">من نحن</a>
+    <a href="./contact.html">اتصل بنا</a>
+</nav>
+
 <main class="container">
-<div class="intro">
-<h2>حاسبة القروض المجانية</h2>
-<p>أدخلي مبلغ التمويل ونسبة الفائدة والمدة للحصول على تقدير فوري للأقساط.</p>
-</div>
 
-<div class="grid">
-<div class="card">
-<h2>🧮 بيانات التمويل</h2>
+    <div class="intro">
+        <h2>حاسبة القروض والتمويل المجانية</h2>
+        <p>
+            استخدمي حاسبة القروض لتقدير القسط الشهري وإجمالي الفوائد
+            وتكلفة التمويل الشخصي أو العقاري أو تمويل السيارات.
+            أدخلي البيانات للحصول على نتائج تقديرية فورية.
+        </p>
+    </div>
 
-<label for="loanType">نوع التمويل</label>
-<select id="loanType">
-<option>تمويل شخصي</option>
-<option>تمويل عقاري</option>
-<option>تمويل سيارة</option>
-<option>تمويل آخر</option>
-</select>
+    <div class="grid" id="calculator">
 
-<label for="amount">مبلغ القرض</label>
-<input id="amount" type="number" min="1" step="any" value="100000" inputmode="decimal">
+        <div class="card">
+            <h2>🧮 بيانات التمويل</h2>
 
-<label for="currency">العملة</label>
-<select id="currency">
-<option value="USD">دولار أمريكي (USD)</option>
-<option value="SAR">ريال سعودي (SAR)</option>
-<option value="YER">ريال يمني (YER)</option>
-<option value="SDG">جنيه سوداني (SDG)</option>
-<option value="AED">درهم إماراتي (AED)</option>
-<option value="EGP">جنيه مصري (EGP)</option>
-</select>
+            <label for="loanType">نوع التمويل</label>
+            <select id="loanType" name="loanType">
+                <option value="personal">تمويل شخصي</option>
+                <option value="real-estate">تمويل عقاري</option>
+                <option value="car">تمويل سيارة</option>
+                <option value="other">تمويل آخر</option>
+            </select>
 
-<label for="rate">نسبة الفائدة السنوية (%)</label>
-<input id="rate" type="number" min="0" max="100" step="any" value="5" inputmode="decimal">
+            <label for="amount">مبلغ القرض</label>
+            <input
+                id="amount"
+                name="amount"
+                type="number"
+                min="0.01"
+                step="any"
+                value="100000"
+                inputmode="decimal"
+                required
+            >
 
-<label for="years">مدة القرض (سنوات)</label>
-<select id="years">
-<option value="1">سنة واحدة</option>
-<option value="2">سنتان</option>
-<option value="3">3 سنوات</option>
-<option value="4">4 سنوات</option>
-<option value="5" selected>5 سنوات</option>
-<option value="7">7 سنوات</option>
-<option value="10">10 سنوات</option>
-<option value="15">15 سنة</option>
-<option value="20">20 سنة</option>
-<option value="25">25 سنة</option>
-<option value="30">30 سنة</option>
-</select>
+            <label for="currency">العملة</label>
+            <select id="currency" name="currency">
+                <option value="USD">دولار أمريكي (USD)</option>
+                <option value="SAR">ريال سعودي (SAR)</option>
+                <option value="YER">ريال يمني (YER)</option>
+                <option value="SDG">جنيه سوداني (SDG)</option>
+                <option value="AED">درهم إماراتي (AED)</option>
+                <option value="EGP">جنيه مصري (EGP)</option>
+            </select>
 
-<label for="extra">رسوم التمويل الإضافية (اختياري)</label>
-<input id="extra" type="number" min="0" step="any" value="0" inputmode="decimal">
+            <label for="rate">نسبة الفائدة السنوية (%)</label>
+            <input
+                id="rate"
+                name="rate"
+                type="number"
+                min="0"
+                max="100"
+                step="any"
+                value="5"
+                inputmode="decimal"
+                required
+            >
 
-<button type="button" id="calculate">احسبي القسط الآن</button>
-<button type="button" class="secondary" id="reset">إعادة ضبط البيانات</button>
+            <label for="years">مدة القرض (سنوات)</label>
+            <select id="years" name="years">
+                <option value="1">سنة واحدة</option>
+                <option value="2">سنتان</option>
+                <option value="3">3 سنوات</option>
+                <option value="4">4 سنوات</option>
+                <option value="5" selected>5 سنوات</option>
+                <option value="7">7 سنوات</option>
+                <option value="10">10 سنوات</option>
+                <option value="15">15 سنة</option>
+                <option value="20">20 سنة</option>
+                <option value="25">25 سنة</option>
+                <option value="30">30 سنة</option>
+            </select>
 
-<p class="note">الحساب تقديري ويفترض أقساطًا شهرية متساوية دون تغيير سعر الفائدة.</p>
-<div id="error" class="message hidden" role="alert"></div>
-</div>
+            <label for="extra">رسوم التمويل الإضافية (اختياري)</label>
+            <input
+                id="extra"
+                name="extra"
+                type="number"
+                min="0"
+                step="any"
+                value="0"
+                inputmode="decimal"
+            >
 
-<div>
-<div class="result" aria-live="polite">
-<h2>📊 نتائج التمويل</h2>
-<div>القسط الشهري التقديري</div>
-<div class="big" id="monthly">—</div>
-<div class="stats">
-<div class="stat"><span>إجمالي الفوائد</span><strong id="interest">—</strong></div>
-<div class="stat"><span>إجمالي السداد مع الرسوم</span><strong id="total">—</strong></div>
-<div class="stat"><span>أصل القرض</span><strong id="principal">—</strong></div>
-<div class="stat"><span>مدة التمويل</span><strong id="duration">—</strong></div>
-</div>
-</div>
+            <button type="button" id="calculate">
+                احسبي القسط الآن
+            </button>
 
-<div class="card">
-<h2>📅 ملخص الأقساط</h2>
-<p id="summary">أدخلي البيانات ثم اضغطي على زر الحساب لعرض النتائج.</p>
-<button type="button" class="secondary" id="showSchedule">عرض جدول السداد</button>
-</div>
-</div>
-</div>
+            <button type="button" class="secondary" id="reset">
+                إعادة ضبط البيانات
+            </button>
 
-<section id="scheduleSection" class="card hidden">
-<h2>جدول السداد السنوي</h2>
-<div class="table-wrap">
-<table>
-<thead><tr><th>السنة</th><th>الرصيد أول السنة</th><th>إجمالي الأقساط</th><th>الفوائد</th><th>سداد أصل القرض</th><th>الرصيد المتبقي</th></tr></thead>
-<tbody id="schedule"></tbody>
-</table>
-</div>
-</section>
+            <p class="note">
+                الحساب تقديري ويفترض أقساطًا شهرية متساوية وفائدة سنوية ثابتة.
+                قد تختلف النتائج عن عروض الجهات التمويلية الفعلية.
+            </p>
 
-<section class="card">
-<h2>كيف تُحسب الأقساط؟</h2>
-<p>تستخدم الحاسبة معادلة الأقساط الشهرية الثابتة عند وجود فائدة سنوية ثابتة. وتتغير النتائج بحسب مبلغ التمويل ونسبة الفائدة ومدة السداد.</p>
-<h3>ما الفرق بين القسط والفائدة؟</h3>
-<p>القسط هو المبلغ المدفوع كل شهر، ويشمل جزءًا من أصل القرض وجزءًا من الفائدة. أما إجمالي الفوائد فهو تكلفة الفائدة طوال فترة السداد.</p>
-<div class="info">تنبيه: النتائج تقديرية ولا تشمل أي رسوم غير الرسوم التي تدخلينها. قد تختلف شروط البنوك والجهات التمويلية، وقد تُحسب بعض المنتجات وفق طريقة مختلفة.</div>
-</section>
+            <div id="error" class="message hidden" role="alert"></div>
+        </div>
+
+        <div>
+            <div class="result" aria-live="polite" aria-atomic="true">
+                <h2>📊 نتائج التمويل</h2>
+
+                <div>القسط الشهري التقديري</div>
+                <div class="big" id="monthly">—</div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <span>إجمالي الفوائد</span>
+                        <strong id="interest">—</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>إجمالي السداد مع الرسوم</span>
+                        <strong id="total">—</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>أصل القرض</span>
+                        <strong id="principal">—</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>مدة التمويل</span>
+                        <strong id="duration">—</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📅 ملخص الأقساط</h2>
+                <p id="summary">
+                    أدخلي البيانات ثم اضغطي على زر الحساب لعرض النتائج.
+                </p>
+
+                <button type="button" class="secondary" id="showSchedule">
+                    عرض جدول السداد
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <section id="scheduleSection" class="card hidden">
+        <h2>جدول السداد السنوي</h2>
+
+        <p class="note">
+            يوضح الجدول تقدير الرصيد والفوائد والمبالغ المسددة خلال كل سنة.
+        </p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">السنة</th>
+                        <th scope="col">الرصيد أول السنة</th>
+                        <th scope="col">إجمالي الأقساط</th>
+                        <th scope="col">الفوائد</th>
+                        <th scope="col">سداد أصل القرض</th>
+                        <th scope="col">الرصيد المتبقي</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card content-section" id="how-it-works">
+        <h2>كيف تُحسب أقساط القروض؟</h2>
+
+        <p>
+            تعتمد حاسبة القروض على مبلغ التمويل ونسبة الفائدة السنوية
+            ومدة السداد لحساب القسط الشهري التقديري. عند استخدام طريقة
+            الأقساط الشهرية الثابتة، يتضمن القسط جزءًا من أصل القرض
+            وجزءًا من الفائدة المستحقة.
+        </p>
+
+        <h3>ما الفرق بين القسط الشهري وإجمالي الفوائد؟</h3>
+
+        <p>
+            القسط الشهري هو المبلغ المتوقع دفعه كل شهر وفق البيانات المدخلة.
+            أما إجمالي الفوائد فهو مجموع الفوائد المقدرة خلال مدة التمويل.
+            ويساعدك الاطلاع على إجمالي السداد في فهم التكلفة الإجمالية
+            بدل التركيز على قيمة القسط وحدها.
+        </p>
+
+        <h3>هل النتيجة مطابقة لعرض البنك؟</h3>
+
+        <p>
+            لا، النتيجة تقديرية وليست عرضًا رسميًا. قد تختلف التكلفة الفعلية
+            بسبب الرسوم الإدارية والتأمين والضرائب وشروط العقد وطريقة
+            احتساب الفائدة. احرصي على مراجعة جدول السداد الرسمي قبل
+            الموافقة على أي تمويل.
+        </p>
+
+        <div class="info">
+            تنبيه: لا تشمل النتائج أي رسوم لم تدخليها في الحاسبة،
+            ولا تمثل نصيحة مالية أو ضمانًا للموافقة على قرض.
+        </div>
+    </section>
+
+    <!-- محتوى تعليمي أصلي لدعم تجربة المستخدم والسيو -->
+    <section class="card content-section" id="financial-tips">
+        <h2>نصائح وإرشادات مالية قبل طلب التمويل</h2>
+
+        <h3>1. احسبي قدرتك على سداد القسط الشهري</h3>
+
+        <p>
+            قبل تقديم طلب قرض أو تمويل شخصي، راجعي دخلك الشهري المنتظم
+            ومصاريف السكن والطعام والمواصلات والفواتير والالتزامات الأخرى.
+            لا تختاري مبلغ التمويل اعتمادًا على القسط وحده؛ اتركي مساحة
+            للمصاريف غير المتوقعة، وتأكدي من قدرتك على الالتزام بالأقساط
+            طوال مدة العقد. تساعدك حاسبة القروض على تجربة مبالغ ومدد
+            مختلفة ومقارنة أثرها على ميزانيتك.
+        </p>
+
+        <h3>2. قارني إجمالي تكلفة التمويل وليس الفائدة فقط</h3>
+
+        <p>
+            عند مقارنة عروض التمويل من البنوك أو شركات التمويل، اطلبي
+            توضيح معدل الفائدة ومعدل النسبة السنوي أو المقياس المعتمد
+            في بلدك، إلى جانب الرسوم الإدارية والتأمين وأي دفعات إضافية.
+            فقد يبدو عرض ما أقل في القسط الشهري، لكن مدة السداد الأطول
+            قد تؤدي إلى دفع تكلفة إجمالية أعلى. قارني العروض على أساس
+            مبلغ ومدة وشروط متقاربة قدر الإمكان.
+        </p>
+
+        <h3>3. افهمي شروط العقد قبل الموافقة</h3>
+
+        <p>
+            اقرئي شروط القرض بعناية، بما في ذلك طريقة احتساب الفائدة،
+            ومواعيد الأقساط، ورسوم التأخير، وشروط السداد المبكر أو
+            إعادة الجدولة. اسألي الجهة التمويلية عن أي بند غير واضح،
+            واطلبي نسخة مكتوبة من جدول السداد والتكلفة الإجمالية.
+            تختلف المنتجات التمويلية والقواعد المنظمة لها بين البلدان،
+            ولذلك ينبغي الاعتماد على المستندات الرسمية للجهة المقدمة
+            للتمويل بدل الاكتفاء بالحسابات التقديرية.
+        </p>
+
+        <h3>4. استخدمي الحاسبة للتخطيط واتخاذ قرار مدروس</h3>
+
+        <p>
+            يمكنك استخدام حاسبة القروض والتمويل لتقدير الأقساط الشهرية
+            للقروض الشخصية أو العقارية أو تمويل السيارات، ومعرفة أثر
+            تغيير مبلغ التمويل أو مدة السداد أو نسبة الفائدة على النتائج.
+            جرّبي أكثر من سيناريو قبل التواصل مع الجهة التمويلية،
+            واحتفظي بهامش مالي للطوارئ. تذكري أن الحاسبة أداة مساعدة
+            للتخطيط، ولا تحل محل العرض الرسمي أو الاستشارة المالية
+            المتخصصة عند الحاجة.
+        </p>
+
+        <h3>أسئلة شائعة حول حاسبة القروض</h3>
+
+        <p>
+            <strong>هل استخدام الحاسبة مجاني؟</strong><br>
+            نعم، يمكنك إدخال بيانات التمويل وعرض النتائج التقديرية
+            دون إنشاء حساب.
+        </p>
+
+        <p>
+            <strong>هل أحتاج إلى إدخال بياناتي الشخصية؟</strong><br>
+            لا تحتاج الحاسبة إلى اسمك أو رقم هويتك أو بيانات حسابك البنكي.
+            لا تدخلي معلومات سرية في الموقع.
+        </p>
+
+        <p>
+            <strong>هل القسط الأقل يعني أن القرض أفضل؟</strong><br>
+            ليس بالضرورة؛ فقد ترتبط الأقساط الأقل بمدة سداد أطول
+            وتكلفة إجمالية أعلى. قارني إجمالي السداد والرسوم والشروط.
+        </p>
+
+        <p>
+            <strong>هل تضمن الحاسبة الموافقة على التمويل؟</strong><br>
+            لا. الحاسبة أداة حسابية فقط، وقرار الموافقة يعود إلى الجهة
+            التمويلية وفق معاييرها وشروطها.
+        </p>
+    </section>
+
 </main>
 
 <footer>
-<p>حاسبة القروض والتمويل الشاملة</p>
-<p>أداة مجانية للتقدير والتخطيط المالي، وليست عرضًا تمويليًا أو نصيحة مالية.</p>
+    <p><strong>حاسبة القروض والتمويل الشاملة</strong></p>
+
+    <p>
+        أداة مجانية للتقدير والتخطيط المالي، وليست عرضًا تمويليًا
+        أو نصيحة مالية.
+    </p>
+
+    <div class="footer-links">
+        <a href="./about.html">من نحن</a>
+        <a href="./privacy.html">سياسة الخصوصية</a>
+        <a href="./terms.html">شروط الاستخدام</a>
+        <a href="./disclaimer.html">إخلاء المسؤولية</a>
+        <a href="./contact.html">اتصل بنا</a>
+    </div>
+
+    <p>© <span id="currentYear"></span> حاسبة القروض والتمويل</p>
 </footer>
 
 <script>
-(function(){
-"use strict";
+(function () {
+    "use strict";
 
-const $ = id => document.getElementById(id);
-let lastData = null;
+    const $ = id => document.getElementById(id);
 
-function format(value){
-const currency = $("currency").value;
-try{
-return new Intl.NumberFormat("ar",{style:"currency",currency:currency,maximumFractionDigits:2}).format(value);
-}catch(e){
-return value.toFixed(2)+" "+currency;
-}
-}
+    let lastData = null;
 
-function calculate(){
-const amount = Number($("amount").value);
-const annualRate = Number($("rate").value);
-const years = Number($("years").value);
-const fees = Number($("extra").value);
+    function format(value) {
+        const currency = $("currency").value;
+        const numericValue = Number(value);
 
-$("error").classList.add("hidden");
+        if (!Number.isFinite(numericValue)) {
+            return "—";
+        }
 
-if(!Number.isFinite(amount)||amount<=0){
-showError("يرجى إدخال مبلغ قرض أكبر من صفر.");
-return;
-}
-if(!Number.isFinite(annualRate)||annualRate<0||annualRate>100){
-showError("يرجى إدخال فائدة سنوية بين 0 و100%.");
-return;
-}
-if(!Number.isFinite(years)||years<=0){
-showError("يرجى اختيار مدة قرض صحيحة.");
-return;
-}
-if(!Number.isFinite(fees)||fees<0){
-showError("يرجى إدخال رسوم صحيحة أو تركها صفرًا.");
-return;
-}
+        try {
+            return new Intl.NumberFormat("ar", {
+                style: "currency",
+                currency: currency,
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(numericValue);
+        } catch (error) {
+            return numericValue.toFixed(2) + " " + currency;
+        }
+    }
 
-const months = Math.round(years*12);
-const r = annualRate/100/12;
-const payment = r===0 ? amount/months : amount*r/(1-Math.pow(1+r,-months));
-const totalPayments = payment*months;
-const totalInterest = totalPayments-amount;
-const totalWithFees = totalPayments+fees;
+    function showError(message) {
+        $("error").textContent = message;
+        $("error").classList.remove("hidden");
+    }
 
-if(!Number.isFinite(payment)){
-showError("تعذر حساب النتائج. يرجى مراجعة البيانات.");
-return;
-}
+    function calculate() {
+        const amount = Number($("amount").value);
+        const annualRate = Number($("rate").value);
+        const years = Number($("years").value);
+        const fees = Number($("extra").value);
 
-$("monthly").textContent = format(payment);
-$("interest").textContent = format(totalInterest);
-$("total").textContent = format(totalWithFees);
-$("principal").textContent = format(amount);
-$("duration").textContent = months+" شهرًا";
-$("summary").textContent = "مدة التمويل "+years+" سنة، بإجمالي "+months+" قسطًا. الرسوم الإضافية المدخلة: "+format(fees)+".";
+        $("error").classList.add("hidden");
 
-lastData = {amount,annualRate,years,months,r,payment,fees};
-renderSchedule();
-}
+        if (!Number.isFinite(amount) || amount <= 0) {
+            showError("يرجى إدخال مبلغ قرض أكبر من صفر.");
+            return;
+        }
 
-function showError(message){
-$("error").textContent = message;
-$("error").classList.remove("hidden");
-}
+        if (
+            !Number.isFinite(annualRate) ||
+            annualRate < 0 ||
+            annualRate > 100
+        ) {
+            showError("يرجى إدخال فائدة سنوية بين 0 و100%.");
+            return;
+        }
 
-function renderSchedule(){
-if(!lastData)return;
-const d = lastData;
-let balance = d.amount;
-let rows = "";
+        if (!Number.isFinite(years) || years <= 0) {
+            showError("يرجى اختيار مدة قرض صحيحة.");
+            return;
+        }
 
-for(let year=1;year<=d.years;year++){
-const start = balance;
-let yearlyInterest = 0;
-let yearlyPrincipal = 0;
-let yearlyPayments = 0;
+        if (!Number.isFinite(fees) || fees < 0) {
+            showError("يرجى إدخال رسوم صحيحة أو تركها صفرًا.");
+            return;
+        }
 
-for(let m=0;m<12 && (year-1)*12+m<d.months;m++){
-const interest = balance*d.r;
-let principal = d.payment-interest;
-if(d.r===0) principal=d.payment;
-if(principal>balance)principal=balance;
-balance = Math.max(0,balance-principal);
-yearlyInterest += interest;
-yearlyPrincipal += principal;
-yearlyPayments += principal+interest;
-}
+        const months = Math.round(years * 12);
+        const monthlyRate = annualRate / 100 / 12;
 
-rows += "<tr><td>"+year+"</td><td>"+format(start)+"</td><td>"+format(yearlyPayments)+"</td><td>"+format(yearlyInterest)+"</td><td>"+format(yearlyPrincipal)+"</td><td>"+format(balance)+"</td></tr>";
-}
-$("schedule").innerHTML = rows;
-}
+        const payment = monthlyRate === 0
+            ? amount / months
+            : amount * monthlyRate /
+              (1 - Math.pow(1 + monthlyRate, -months));
 
-$("calculate").addEventListener("click",calculate);
+        const totalPayments = payment * months;
+        const totalInterest = totalPayments - amount;
+        const totalWithFees = totalPayments + fees;
 
-$("reset").addEventListener("click",function(){
-$("amount").value="100000";
-$("rate").value="5";
-$("years").value="5";
-$("extra").value="0";
-$("currency").value="USD";
-$("loanType").selectedIndex=0;
-$("scheduleSection").classList.add("hidden");
-calculate();
-});
+        if (
+            !Number.isFinite(payment) ||
+            !Number.isFinite(totalPayments) ||
+            !Number.isFinite(totalInterest)
+        ) {
+            showError("تعذر حساب النتائج. يرجى مراجعة البيانات.");
+            return;
+        }
 
-$("showSchedule").addEventListener("click",function(){
-if(!lastData)calculate();
-if(lastData){
-$("scheduleSection").classList.toggle("hidden");
-$("scheduleSection").scrollIntoView({behavior:"smooth",block:"start"});
-}
-});
+        $("monthly").textContent = format(payment);
+        $("interest").textContent = format(totalInterest);
+        $("total").textContent = format(totalWithFees);
+        $("principal").textContent = format(amount);
+        $("duration").textContent = months + " شهرًا";
 
-["amount","rate","years","extra","currency"].forEach(id=>{
-$(id).addEventListener("change",calculate);
-});
+        $("summary").textContent =
+            "نوع التمويل: " + $("loanType").selectedOptions[0].text +
+            ". مدة التمويل " + years +
+            " سنة، بإجمالي " + months +
+            " قسطًا. الرسوم الإضافية المدخلة: " + format(fees) + ".";
 
-calculate();
+        lastData = {
+            amount: amount,
+            annualRate: annualRate,
+            years: years,
+            months: months,
+            monthlyRate: monthlyRate,
+            payment: payment,
+            fees: fees
+        };
+
+        renderSchedule();
+    }
+
+    function renderSchedule() {
+        if (!lastData) {
+            return;
+        }
+
+        const data = lastData;
+        let balance = Number(data.amount);
+        let rows = "";
+
+        for (let year = 1; year <= data.years; year++) {
+            const startBalance = Number(balance);
+
+            let yearlyInterest = 0;
+            let yearlyPrincipal = 0;
+            let yearlyPayments = 0;
+
+            for (
+                let month = 0;
+                month < 12 && (year - 1) * 12 + month < data.months;
+                month++
+            ) {
+                const interest = Number(balance * data.monthlyRate);
+
+                let principal = Number(data.payment - interest);
+
+                if (data.monthlyRate === 0) {
+                    principal = Number(data.payment);
+                }
+
+                if (principal > balance) {
+                    principal = Number(balance);
+                }
+
+                balance = Math.max(0, Number(balance - principal));
+
+                yearlyInterest =
+                    Number(yearlyInterest) + Number(interest);
+
+                yearlyPrincipal =
+                    Number(yearlyPrincipal) + Number(principal);
+
+                // تحويل صريح إلى Number لمنع أي دمج نصي.
+                yearlyPayments =
+                    Number(yearlyPayments) +
+                    Number(principal) +
+                    Number(interest);
+            }
+
+            rows += `
+                <tr>
+                    <td>${year}</td>
+                    <td>${format(startBalance)}</td>
+                    <td>${format(yearlyPayments)}</td>
+                    <td>${format(yearlyInterest)}</td>
+                    <td>${format(yearlyPrincipal)}</td>
+                    <td>${format(balance)}</td>
+                </tr>
+            `;
+        }
+
+        $("schedule").innerHTML = rows;
+    }
+
+    $("calculate").addEventListener("click", calculate);
+
+    $("reset").addEventListener("click", function () {
+        $("amount").value = "100000";
+        $("rate").value = "5";
+        $("years").value = "5";
+        $("extra").value = "0";
+        $("currency").value = "USD";
+        $("loanType").selectedIndex = 0;
+
+        $("scheduleSection").classList.add("hidden");
+
+        calculate();
+    });
+
+    $("showSchedule").addEventListener("click", function () {
+        if (!lastData) {
+            calculate();
+        }
+
+        if (lastData) {
+            $("scheduleSection").classList.toggle("hidden");
+
+            $("scheduleSection").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+
+    [
+        "amount",
+        "rate",
+        "years",
+        "extra",
+        "currency",
+        "loanType"
+    ].forEach(function (id) {
+        $(id).addEventListener("change", calculate);
+    });
+
+    $("currentYear").textContent = new Date().getFullYear();
+
+    calculate();
 })();
 </script>
+
 </body>
 </html>
